@@ -69,6 +69,16 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function testProblemStatementInput(){
+
+    console.log("\n");
+    console.log("Hash from problem statement: ", 667734139064);
+    var decodedString = decodeHash(667734139064);
+    console.log("Decoded String: ", decodedString);
+    console.log("Encoded hash of retrieved string: ", encodeString(decodedString));
+    console.log("\n");
+}
+
 function testDecodeHash(inputStr) {
 
     var hash, decodedStr;
@@ -96,3 +106,4 @@ function test() {
 }
 
 test();
+testProblemStatementInput();
