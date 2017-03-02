@@ -27,4 +27,18 @@ function encodeString(str) {
     return h;
 }
 
+function decodeHash(hash) {
 
+    var letters = ["a","c","d","e","g","i","l","m","n","o","p","r","s","t","u","w"];
+    var answer = [],
+        index;
+
+    while (hash > 7) {
+
+        index = hash % 37;
+        answer.push(letters[index]);
+        hash = Math.floor(hash/37);
+    }
+
+    return answer.reverse().join("");
+}
