@@ -35,3 +35,17 @@ function findLargestDiff(arr){
 
     return difference;
 }
+
+function testFindLargestDiff(arr, expected, testName) {
+
+    var actual;
+
+    actual = findLargestDiff(arr);
+
+    console.log("\n" + testName + "\n");
+    console.log("Array: " + arr);
+    console.log("Expected: " + expected);
+    console.log("Actual: " + actual);
+    console.log(expected==actual?"Passed":"Failed");
+
+}
