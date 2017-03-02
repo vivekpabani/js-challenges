@@ -9,3 +9,46 @@
   Since this algorithm takes O(nlogn) because of sorting, the other approach is better than this
   which takes O(n) time and one pass through the array.
 */
+
+
+function quickSort(arr, start, end){
+
+   var len = arr.length,
+       partIndex;
+
+   if(start < end){
+       partIndex = partition(arr, start, end);
+
+       //sort both halves
+       quickSort(arr, start, partIndex-1);
+       quickSort(arr, partIndex+1, end);
+   }
+
+   return arr;
+}
+
+function partition(arr, start, end){
+
+   var pivot = arr[end],
+       i;
+
+   for(i = start; i < end; ++i){
+
+    if(arr[i] < pivot) {
+
+      swap(arr, i, start);
+      start = start + 1;
+
+    }
+  }
+
+  swap(arr, end, start);
+  return start;
+}
+
+function swap(arr, i, j){
+
+   var temp = arr[i];
+   arr[i] = arr[j];
+   arr[j] = temp;
+}
