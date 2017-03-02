@@ -10,3 +10,21 @@
   Do this until hash becomes 7 (the default value)
   Return the reverse of answer, since all char are added from end to start to the answer.
 */
+
+function encodeString(str) {
+
+    var h = 7;
+    var letters = ["a","c","d","e","g","i","l","m","n","o","p","r","s","t","u","w"];
+
+    for (var i = 0; i < str.length; i++) {
+
+        var letter = str[i];
+        var index = letters.indexOf(letter);
+
+        h = (h * 37) + index;
+    }
+
+    return h;
+}
+
+
