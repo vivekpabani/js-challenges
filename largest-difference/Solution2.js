@@ -10,6 +10,22 @@
   which takes O(n) time and one pass through the array.
 */
 
+function findLargestDiff(arr){
+
+    if (arr.length < 2) {
+
+        return -1;
+    }
+
+    // sort the array with quickSort.
+    // can also use Array sort() method.
+
+    quickSort(arr, 0, arr.length-1);
+
+    difference = arr[arr.length-1] - arr[0];
+
+    return difference;
+}
 
 function quickSort(arr, start, end){
 
