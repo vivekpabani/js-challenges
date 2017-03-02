@@ -33,3 +33,22 @@ function doRectIntersect(rec1, rec2) {
     return true;
 }
 
+function testDoRectIntersect(rect1, rect2, expected, testName) {
+
+    var actual;
+    console.log("\n" + testName + "\n");
+    console.log("Rect1: " + "(" + rect1.x + ", " + rect1.y + ")"
+                          + " height: " + rect1.height
+                          + " width: " + rect1.width);
+
+    console.log("Rect2: " + "(" + rect2.x + ", " + rect2.y + ")"
+                          + " height: " + rect2.height
+                          + " width: " + rect2.width);
+
+    actual = doRectIntersect(rect1, rect2);
+
+    console.log("Expected: " + expected);
+    console.log("Actual: " + actual);
+    console.log(expected==actual?"Passed":"Failed");
+
+}
