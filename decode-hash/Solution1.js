@@ -83,3 +83,16 @@ function testDecodeHash(inputStr) {
     console.log(inputStr==decodedStr?"Passed":"Failed");
 
 }
+
+function test() {
+
+    var letters = ["a","c","d","e","g","i","l","m","n","o","p","r","s","t","u","w"],
+        i = 0;
+
+    for (i = 0; i < 10; ++i) {
+
+        testDecodeHash(randomStr(letters));
+    }
+}
+
+test();
