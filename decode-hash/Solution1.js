@@ -68,3 +68,18 @@ function getRandomInt(min, max) {
 
     return Math.floor(Math.random() * (max - min)) + min;
 }
+
+function testDecodeHash(inputStr) {
+
+    var hash, decodedStr;
+
+    hash = encodeString(inputStr);
+    decodedStr = decodeHash(hash);
+
+    console.log("\n");
+    console.log("Input: " + inputStr);
+    console.log("Encoded Hash: " + hash);
+    console.log("Decoded String: " + decodedStr);
+    console.log(inputStr==decodedStr?"Passed":"Failed");
+
+}
