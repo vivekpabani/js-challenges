@@ -52,3 +52,42 @@ function testDoRectIntersect(rect1, rect2, expected, testName) {
     console.log(expected==actual?"Passed":"Failed");
 
 }
+
+function test() {
+
+    var rect1, rect2;
+
+    rect1 = {x: 20, y:30, width: 40, height: 11};
+    rect2 = {x: 50, y:22, width: 26, height: 36};
+    testDoRectIntersect(rect1, rect2, true, "Normal intersecting rectangles.");
+
+    rect1 = {x: 20, y:30, width: 5, height: 7};
+    rect2 = {x: 50, y:22, width: 6, height: 8};
+    testDoRectIntersect(rect1, rect2, false, "Normal non-intersecting rectangles.");
+
+    rect1 = {x: 0, y:0, width: 10, height: 10};
+    rect2 = {x: 0, y:10, width: 10, height: 10};
+    testDoRectIntersect(rect1, rect2, true, "Rect1 stacked on Rect2 with shared border.");
+
+    rect1 = {x: 0, y:10, width: 10, height: 10};
+    rect2 = {x: 0, y:0, width: 10, height: 10};
+    testDoRectIntersect(rect1, rect2, true, "Rect2 stacked on Rect1 with shared border.");
+
+    rect1 = {x: 0, y:0, width: 10, height: 10};
+    rect2 = {x: 10, y:0, width: 10, height: 10};
+    testDoRectIntersect(rect1, rect2, true, "Rect2 on right of Rect1 with shared border.");
+
+    rect1 = {x: 10, y:0, width: 10, height: 10};
+    rect2 = {x: 0, y:0, width: 10, height: 10};
+    testDoRectIntersect(rect1, rect2, true, "Rect1 on right of Rect2 with shared border.");
+
+    rect1 = {x: 0, y:0, width: 10, height: 10};
+    rect2 = {x: 0, y:11, width: 10, height: 10};
+    testDoRectIntersect(rect1, rect2, false, "Rect1 stacked on Rect2 without touching border.");
+
+    rect1 = {x: 0, y:0, width: 10, height: 10};
+    rect2 = {x: 10, y:10, width: 10, height: 10};
+    testDoRectIntersect(rect1, rect2, true, "Rect1 and Rect2 intersecting at one point (Rect2 origin).");
+}
+
+test();
