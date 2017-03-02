@@ -42,3 +42,29 @@ function decodeHash(hash) {
 
     return answer.reverse().join("");
 }
+
+function randomStr(letters) {
+
+    var strLen = 0,
+        str = "",
+        randomInd = 0,
+        limit = letters.length;
+        i = 0;
+
+    strLen = getRandomInt(0, 10);
+
+    for (i = 0; i < strLen; ++i) {
+        randomInd = getRandomInt(0, limit);
+        str = str + letters[randomInd];
+    }
+
+    return str;
+}
+
+function getRandomInt(min, max) {
+
+    min = Math.ceil(min);
+    max = Math.floor(max);
+
+    return Math.floor(Math.random() * (max - min)) + min;
+}
