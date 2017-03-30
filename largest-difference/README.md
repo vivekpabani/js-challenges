@@ -1,4 +1,4 @@
-####Solution1:
+#### Solution1:
 
 Iterate through the array and keep track of mimimum and maximum value so far.
 The largest difference is the difference between maximum and minimum value.
@@ -8,7 +8,7 @@ Time Complexity: O(n) (solves in one pass through the array)
 
 Space Complexity: O(1)
 
-####Solution2:
+#### Solution2:
 
 Sort the array.
 The largest difference is the difference between maximum and minimum value.
@@ -18,5 +18,5 @@ Time Complexity: O(nlogn) (time to sort the array)
 
 Space Complexity: O(logn)
 
-###Preference
+### Preference
 Since solution1 takes O(n) time, and solves in one pass, it is better than the other approach, which takes O(nlogn).
